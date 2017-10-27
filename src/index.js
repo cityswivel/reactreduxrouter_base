@@ -10,6 +10,7 @@ import { Route } from 'react-router'
 import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux'
 import reducers from './reducers'
 import { createLogger } from 'redux-logger'
+import thunk from 'redux-thunk';
 
 import Test from './views/Test';
 import Header from './views/Header';
@@ -21,7 +22,7 @@ const store = createStore(
     ...reducers,
     router: routerReducer
   }),
-  applyMiddleware(middleware,loggerMiddleware)
+  applyMiddleware(middleware,loggerMiddleware,thunk)
 )
 
 ReactDOM.render(
