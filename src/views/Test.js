@@ -12,7 +12,13 @@ const styles = {
 	listStyle: 'none'
 	},
 	li : {
-	display: 'inline-block'
+	display: 'inline-block',
+	width: '31%',
+	verticalAlign: 'top',
+	margin: '1%',
+	},
+	image : {
+	width: '100%'
 	}
 }
 
@@ -48,7 +54,7 @@ const image_base = 'https://s3.us-east-2.amazonaws.com/cityswivel.images';
 				{item.tp_name}
 			</div>
 			<div>
-		<img src={image_base + item.tp_image} width="100" />
+		<img style={styles.image} src={image_base + item.tp_image} width="100" />
 			</div>
 			</li>
 		))}
