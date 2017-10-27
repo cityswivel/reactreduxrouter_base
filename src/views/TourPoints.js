@@ -18,11 +18,12 @@ const styles = {
 	margin: '1%',
 	},
 	image : {
-	width: '100%'
+	width: '100%',
+	borderRadius: '5px'
 	}
 }
 
-class Test extends Component {
+class Tourpoints extends Component {
   constructor(props) {
         super(props);
    }
@@ -41,12 +42,8 @@ const image_base = 'https://s3.us-east-2.amazonaws.com/cityswivel.images';
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Test</h1>
+          <h1 className="App-title">TourPoints</h1>
         </header>
-        <p className="App-intro">
-        This is the test page.
-        </p>
-        <div><Link to='/'>HOME</Link></div>
 	<ul style={styles.ul}>
 		{this.props.items.map((item) => (
 			<li style={styles.li} key={item.id}>
@@ -64,9 +61,6 @@ const image_base = 'https://s3.us-east-2.amazonaws.com/cityswivel.images';
   }
 }
 
-//function mapDispatchToProps(dispatch) {
-//  return { actions: bindActionCreators(addCounter,fetchEvents, dispatch) }
-//}
 
 const mapStateToProps = (state) => {
     return {
@@ -80,6 +74,5 @@ const mapDispatchToProps = (dispatch) => {
         fetchData: (url) => dispatch(itemsFetchData(url))
     };
 };
-export default connect(mapStateToProps, mapDispatchToProps)(Test);
-//export default connect(mapDispatchToProps)(Test);
+export default connect(mapStateToProps, mapDispatchToProps)(Tourpoints);
 

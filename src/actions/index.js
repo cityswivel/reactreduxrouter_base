@@ -27,14 +27,6 @@ export const cass = () => ({
 	stuff: 'cass'
 });
 
-export function fetchEvents() {
-	const url = 'https://api.cityswivel.com/list_events';
-	const events = fetch(url).then(function(response){return response.json()});
-	return {
-		type: actionType.EVENTS,
-		payload: events
-	};
-}
 
 export function itemsHasErrored(bool) {
     return {

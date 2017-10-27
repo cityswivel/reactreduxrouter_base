@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom'
 const styles = {
 	li : {
 		display:'inline-block',
-		margin: 15
+		margin: 15,
+		textDecoration: 'none'
 	},
 	ul : {
 		listStyle: 'none',
@@ -19,8 +20,10 @@ const Header = () => (
 <header style={{background:'rgb(63, 109, 151)',padding:15,position:'sticky',zIndex:'3',top:'0'}}>
 	<nav>
 		<ul style={styles.ul}>
-			<li style={styles.li}><Link to='/test'>test</Link></li>
 			<li style={styles.li}><Link to='/'>home</Link></li>
+			<li style={styles.li}><Link to='/tourpoints'>tourpoints</Link></li>
+			<li style={styles.li}><Link to='/events'>Events</Link></li>
+			<li style={styles.li}><Link to='/tours'>Tours</Link></li>
 		</ul>
 	</nav>
 </header>

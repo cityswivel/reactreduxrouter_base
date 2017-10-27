@@ -12,7 +12,6 @@ class App extends Component {
         <p className="App-intro">
 	This is the home page.
         </p>
-	<div><Link to='/test'>TEST</Link></div>
       </div>
     );
   }
