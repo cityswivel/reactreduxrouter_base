@@ -6,14 +6,22 @@ import { addCounter } from '../actions';
 import { fetchEvents } from '../actions';
 import { itemsFetchData } from '../actions';
 
+
+const styles = {
+	ul : {
+	listStyle: 'none'
+	},
+	li : {
+	display: 'inline-block'
+	}
+}
+
 class Test extends Component {
   constructor(props) {
         super(props);
    }
 	componentDidMount(){
-console.log(this.props);
-//this.props.dispatch(fetchEvents());
-this.props.fetchData('https://api.cityswivel.com/list_events');
+this.props.fetchData('https://api.cityswivel.com/list_tourpoints');
 	}
 
   render() {
@@ -33,11 +41,15 @@ const image_base = 'https://s3.us-east-2.amazonaws.com/cityswivel.images';
         This is the test page.
         </p>
         <div><Link to='/'>HOME</Link></div>
-	<ul>
+	<ul style={styles.ul}>
 		{this.props.items.map((item) => (
-			<li key={item.id}>
-				{item.event_title}
-		<img src={image_base + item.event_image} width="100" />
+			<li style={styles.li} key={item.id}>
+			<div>
+				{item.tp_name}
+			</div>
+			<div>
+		<img src={image_base + item.tp_image} width="100" />
+			</div>
 			</li>
 		))}
 	</ul>
